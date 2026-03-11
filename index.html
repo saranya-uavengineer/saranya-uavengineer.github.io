@@ -10,25 +10,42 @@
 body{
 margin:0;
 font-family:Segoe UI;
-background:#0B0F19;
+background:#050a14;
 color:white;
 scroll-behavior:smooth;
 }
+
+/* Background grid effect */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(0,229,255,0.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,229,255,0.08) 1px, transparent 1px);
+background-size:60px 60px;
+z-index:-1;
+}
+
+/* Navbar */
 
 .navbar{
 display:flex;
 justify-content:space-between;
 padding:20px 10%;
-background:#111827;
+background:#0b1320;
 position:sticky;
 top:0;
-z-index:100;
 }
 
 .navbar a{
 color:white;
 text-decoration:none;
-margin-left:25px;
+margin-left:30px;
 font-weight:600;
 }
 
@@ -36,29 +53,63 @@ font-weight:600;
 color:#00E5FF;
 }
 
+/* Container */
+
 .container{
 width:85%;
 margin:auto;
 }
+
+/* Hero section */
 
 .hero{
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:120px 0;
-animation:fadein 1.5s ease;
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
 color:#00E5FF;
 margin-bottom:10px;
 }
 
 .hero h3{
-color:#6EE7FF;
+color:#7dd3fc;
 margin-bottom:20px;
 }
+
+.hero p{
+max-width:500px;
+line-height:1.6;
+}
+
+/* Buttons */
+
+.buttons{
+margin-top:25px;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+margin-right:15px;
+font-weight:600;
+}
+
+.btn-primary{
+background:#00E5FF;
+color:black;
+}
+
+.btn-outline{
+border:1px solid #00E5FF;
+color:#00E5FF;
+}
+
+/* Profile image */
 
 .hero img{
 width:240px;
@@ -66,17 +117,22 @@ height:240px;
 object-fit:cover;
 border-radius:50%;
 border:4px solid #00E5FF;
-box-shadow:0 0 30px #00E5FF55;
+box-shadow:0 0 40px rgba(0,229,255,0.6);
 }
 
+/* Sections */
+
 .section{
-margin-top:80px;
+margin-top:90px;
 }
 
 .section h2{
 color:#00E5FF;
-margin-bottom:20px;
+margin-bottom:25px;
+font-size:28px;
 }
+
+/* Cards */
 
 .grid{
 display:grid;
@@ -85,27 +141,24 @@ gap:25px;
 }
 
 .card{
-background:#111827;
+background:#0f172a;
 padding:30px;
 border-radius:12px;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 25px #00E5FF33;
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,229,255,0.25);
 }
+
+/* Footer */
 
 .footer{
 text-align:center;
-margin-top:100px;
+margin-top:120px;
 padding:40px;
-color:#9CA3AF;
-}
-
-@keyframes fadein{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
+color:#94a3b8;
 }
 
 </style>
@@ -129,6 +182,8 @@ to{opacity:1; transform:translateY(0);}
 
 <div class="container">
 
+<!-- HERO -->
+
 <div class="hero">
 
 <div>
@@ -140,13 +195,29 @@ to{opacity:1; transform:translateY(0);}
 <p>
 Engineer specializing in UAV system integration, flight testing,
 and diagnostics for PX4 and ArduPilot autonomous platforms.
+Focused on system reliability, telemetry analysis, and UAV
+performance validation.
 </p>
+
+<div class="buttons">
+
+<a class="btn btn-primary" href="https://github.com/saranya-uavengineer" target="_blank">
+View GitHub
+</a>
+
+<a class="btn btn-outline" href="#">
+Download Resume
+</a>
+
+</div>
 
 </div>
 
 <img src="profile.jpg">
 
 </div>
+
+<!-- ABOUT -->
 
 <div id="about" class="section">
 
@@ -156,19 +227,20 @@ and diagnostics for PX4 and ArduPilot autonomous platforms.
 
 <p>
 Aeronautical engineer experienced in UAV system testing,
-flight validation, and integration of Pixhawk-based
-autonomous platforms.
+flight validation, and integration of Pixhawk-based autonomous platforms.
 </p>
 
 <p>
-Focused on identifying UAV system anomalies using flight log
-analysis including EKF diagnostics, vibration behavior,
-GPS reliability, and telemetry analysis.
+My work focuses on diagnosing UAV system anomalies using flight log
+analysis including EKF diagnostics, vibration analysis,
+GPS reliability validation, and telemetry diagnostics.
 </p>
 
 </div>
 
 </div>
+
+<!-- EXPERTISE -->
 
 <div id="expertise" class="section">
 
@@ -178,27 +250,29 @@ GPS reliability, and telemetry analysis.
 
 <div class="card">
 <h3>Autonomous UAV Systems</h3>
-PX4, ArduPilot, Pixhawk flight controllers, mission planning.
+PX4 • ArduPilot • Pixhawk • Mission Planning
 </div>
 
 <div class="card">
 <h3>Flight Test Engineering</h3>
-System validation, stability evaluation, autonomous mission testing.
+System validation • Autonomous mission testing • Stability evaluation
 </div>
 
 <div class="card">
 <h3>UAV Diagnostics</h3>
-EKF diagnostics, vibration analysis, GPS validation.
+EKF analysis • Vibration diagnostics • Telemetry analysis
 </div>
 
 <div class="card">
-<h3>Geospatial Analysis</h3>
-QGIS spatial analysis and UAV mapping validation.
+<h3>Geospatial Validation</h3>
+QGIS spatial analysis • UAV mapping validation
 </div>
 
 </div>
 
 </div>
+
+<!-- PROJECTS -->
 
 <div id="projects" class="section">
 
@@ -208,22 +282,27 @@ QGIS spatial analysis and UAV mapping validation.
 
 <div class="card">
 <h3>Drone Flight Time Calculator</h3>
-Python tool estimating UAV endurance using battery capacity and payload parameters.
+Python tool estimating UAV endurance using battery capacity
+and payload parameters.
 </div>
 
 <div class="card">
 <h3>UAV Flight Diagnostics</h3>
-Post-flight telemetry analysis to detect system instability and anomalies.
+Flight log analysis to identify system instability
+and sensor anomalies.
 </div>
 
 <div class="card">
 <h3>UAV Platform Configuration</h3>
-Engineering study on propulsion matching and multirotor platform optimization.
+Engineering study on propulsion matching
+and multirotor platform optimization.
 </div>
 
 </div>
 
 </div>
+
+<!-- CONTACT -->
 
 <div id="contact" class="section">
 
