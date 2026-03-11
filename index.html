@@ -8,10 +8,11 @@
 <style>
 
 body{
-font-family: Arial;
 margin:0;
-background:#0b0f19;
+font-family:Segoe UI;
+background:#0B0F19;
 color:white;
+scroll-behavior:smooth;
 }
 
 .navbar{
@@ -21,13 +22,18 @@ padding:20px 10%;
 background:#111827;
 position:sticky;
 top:0;
+z-index:100;
 }
 
 .navbar a{
 color:white;
 text-decoration:none;
-margin-left:20px;
-font-weight:bold;
+margin-left:25px;
+font-weight:600;
+}
+
+.navbar a:hover{
+color:#00E5FF;
 }
 
 .container{
@@ -39,50 +45,67 @@ margin:auto;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:80px 0;
-}
-
-.hero-text{
-max-width:600px;
+padding:120px 0;
+animation:fadein 1.5s ease;
 }
 
 .hero h1{
-font-size:42px;
-color:#00e0ff;
+font-size:48px;
+color:#00E5FF;
+margin-bottom:10px;
 }
 
 .hero h3{
-color:#7dd3fc;
+color:#6EE7FF;
+margin-bottom:20px;
 }
 
 .hero img{
-width:220px;
+width:240px;
+height:240px;
+object-fit:cover;
 border-radius:50%;
-border:4px solid #00e0ff;
+border:4px solid #00E5FF;
+box-shadow:0 0 30px #00E5FF55;
 }
 
 .section{
-margin-top:60px;
+margin-top:80px;
+}
+
+.section h2{
+color:#00E5FF;
+margin-bottom:20px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
 background:#111827;
-padding:25px;
+padding:30px;
 border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 25px #00E5FF33;
 }
 
 .footer{
 text-align:center;
-margin-top:80px;
-padding:30px;
-color:#9ca3af;
+margin-top:100px;
+padding:40px;
+color:#9CA3AF;
+}
+
+@keyframes fadein{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -93,7 +116,7 @@ color:#9ca3af;
 
 <div class="navbar">
 
-<div><b>Saranya P</b></div>
+<div><b style="color:#00E5FF;">Saranya P</b></div>
 
 <div>
 <a href="#about">About</a>
@@ -108,7 +131,7 @@ color:#9ca3af;
 
 <div class="hero">
 
-<div class="hero-text">
+<div>
 
 <h1>SARANYA P</h1>
 
@@ -139,8 +162,8 @@ autonomous platforms.
 
 <p>
 Focused on identifying UAV system anomalies using flight log
-analysis including EKF health, vibration behavior, GPS
-reliability, and telemetry diagnostics.
+analysis including EKF diagnostics, vibration behavior,
+GPS reliability, and telemetry analysis.
 </p>
 
 </div>
@@ -155,22 +178,22 @@ reliability, and telemetry diagnostics.
 
 <div class="card">
 <h3>Autonomous UAV Systems</h3>
-<p>PX4, ArduPilot, Pixhawk flight controllers, mission planning.</p>
+PX4, ArduPilot, Pixhawk flight controllers, mission planning.
 </div>
 
 <div class="card">
 <h3>Flight Test Engineering</h3>
-<p>System validation, stability evaluation, autonomous mission testing.</p>
+System validation, stability evaluation, autonomous mission testing.
 </div>
 
 <div class="card">
 <h3>UAV Diagnostics</h3>
-<p>EKF diagnostics, vibration analysis, GPS validation.</p>
+EKF diagnostics, vibration analysis, GPS validation.
 </div>
 
 <div class="card">
 <h3>Geospatial Analysis</h3>
-<p>QGIS spatial analysis and UAV mapping validation.</p>
+QGIS spatial analysis and UAV mapping validation.
 </div>
 
 </div>
@@ -185,17 +208,17 @@ reliability, and telemetry diagnostics.
 
 <div class="card">
 <h3>Drone Flight Time Calculator</h3>
-<p>Python tool to estimate UAV endurance based on battery capacity and payload.</p>
+Python tool estimating UAV endurance using battery capacity and payload parameters.
 </div>
 
 <div class="card">
 <h3>UAV Flight Diagnostics</h3>
-<p>Analysis of UAV flight logs to identify instability and system anomalies.</p>
+Post-flight telemetry analysis to detect system instability and anomalies.
 </div>
 
 <div class="card">
 <h3>UAV Platform Configuration</h3>
-<p>Engineering study of multirotor propulsion and frame configuration.</p>
+Engineering study on propulsion matching and multirotor platform optimization.
 </div>
 
 </div>
