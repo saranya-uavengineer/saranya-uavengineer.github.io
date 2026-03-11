@@ -11,12 +11,34 @@
 
 <style>
 
+/* GLOBAL */
+
 body{
 margin:0;
 font-family:Segoe UI, Arial;
-background:linear-gradient(180deg,#020617,#050a14);
+background:#020617;
 color:white;
 scroll-behavior:smooth;
+}
+
+/* Animated background glow */
+
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#00e5ff30,transparent 70%);
+filter:blur(120px);
+animation:glowmove 18s infinite alternate ease-in-out;
+z-index:-1;
+}
+
+@keyframes glowmove{
+0%{transform:translate(0,0);}
+100%{transform:translate(300px,200px);}
 }
 
 /* NAVBAR */
@@ -25,9 +47,9 @@ scroll-behavior:smooth;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:rgba(3,7,18,0.9);
-backdrop-filter:blur(6px);
+padding:18px 10%;
+background:rgba(2,6,23,0.85);
+backdrop-filter:blur(8px);
 position:sticky;
 top:0;
 z-index:100;
@@ -36,7 +58,7 @@ z-index:100;
 .navbar a{
 color:white;
 text-decoration:none;
-margin-left:25px;
+margin-left:28px;
 font-weight:600;
 }
 
@@ -66,61 +88,53 @@ max-width:520px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 color:#00E5FF;
 margin-bottom:10px;
 }
 
 .hero h3{
 color:#7dd3fc;
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .hero p{
-line-height:1.6;
+line-height:1.7;
 }
 
 /* PROFILE IMAGE */
 
 .hero img{
-width:220px;
-height:220px;
+width:230px;
+height:230px;
 border-radius:50%;
 object-fit:cover;
 border:3px solid #00E5FF;
-box-shadow:0 0 30px rgba(0,229,255,0.5);
+box-shadow:
+0 0 25px rgba(0,229,255,0.6),
+0 0 60px rgba(0,229,255,0.25);
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
-margin-top:90px;
+margin-top:100px;
 scroll-margin-top:120px;
 }
 
 .section h2{
 color:#00E5FF;
 margin-bottom:20px;
+font-size:28px;
 }
 
-/* CARDS */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+/* CARD */
 
 .card{
 background:#0f172a;
-padding:25px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,229,255,0.25);
+padding:30px;
+border-radius:12px;
+line-height:1.7;
 }
 
 /* TIMELINE */
@@ -131,7 +145,7 @@ padding-left:25px;
 }
 
 .timeline-item{
-margin-bottom:25px;
+margin-bottom:35px;
 }
 
 .timeline-item h3{
@@ -139,12 +153,39 @@ color:#7dd3fc;
 margin-bottom:6px;
 }
 
+.timeline-item span{
+color:#94a3b8;
+font-size:14px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+/* SKILL CARDS */
+
+.skill{
+background:#0f172a;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,229,255,0.2);
+}
+
 /* FOOTER */
 
 .footer{
 text-align:center;
-margin-top:100px;
-padding:30px;
+margin-top:120px;
+padding:40px;
 color:#94a3b8;
 }
 
@@ -162,7 +203,6 @@ color:#94a3b8;
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#expertise">Expertise</a>
-<a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -181,10 +221,10 @@ color:#94a3b8;
 <h3>UAV Systems Integration & Flight Test Engineer</h3>
 
 <p>
-Engineer specializing in UAV system integration, flight testing
+Engineer specializing in UAV system integration, flight testing,
 and diagnostics of PX4 and ArduPilot autonomous platforms.
-Focused on telemetry analysis, system reliability,
-and UAV performance validation.
+Focused on system reliability, telemetry analysis,
+and UAV performance validation in real-world operations.
 </p>
 
 </div>
@@ -202,15 +242,22 @@ and UAV performance validation.
 <div class="card">
 
 <p>
-Aeronautical engineer experienced in UAV system testing,
-flight validation, and integration of Pixhawk-based
-autonomous UAV platforms.
+I am an Aeronautical Engineer with professional experience in
+UAV system integration, flight testing, and autonomous platform
+validation using Pixhawk-based flight control systems.
 </p>
 
 <p>
-My work focuses on diagnosing UAV anomalies using flight log
-analysis including EKF diagnostics, vibration analysis,
-GPS validation and telemetry monitoring.
+My work focuses on investigating UAV system behaviour through
+flight log diagnostics including EKF health analysis, vibration
+characterisation, GPS reliability validation, and telemetry
+performance monitoring.
+</p>
+
+<p>
+I am particularly interested in improving the reliability of
+autonomous UAV platforms through structured testing,
+data-driven diagnostics, and system validation.
 </p>
 
 </div>
@@ -227,17 +274,32 @@ GPS validation and telemetry monitoring.
 
 <div class="timeline-item">
 <h3>Drone Technical Support Engineer</h3>
-<p>Drone FocusPath – UAV integration, diagnostics and flight validation.</p>
+<span>Drone FocusPath</span>
+<p>
+Working on UAV system integration, diagnostics and
+technical support for drone platforms used in agriculture
+and aerial mapping applications.
+</p>
 </div>
 
 <div class="timeline-item">
 <h3>Senior Flight Test Engineer</h3>
-<p>General Aeronautics – autonomous UAV testing and system validation.</p>
+<span>General Aeronautics</span>
+<p>
+Led UAV flight testing activities for autonomous drone
+platforms including system validation, stability testing
+and flight performance evaluation.
+</p>
 </div>
 
 <div class="timeline-item">
 <h3>UAV Flight Test Engineer</h3>
-<p>Flight testing, telemetry diagnostics and performance validation.</p>
+<span>General Aeronautics</span>
+<p>
+Conducted structured flight tests, telemetry diagnostics
+and system analysis to validate UAV behaviour in
+real-world operational conditions.
+</p>
 </div>
 
 </div>
@@ -252,51 +314,24 @@ GPS validation and telemetry monitoring.
 
 <div class="grid">
 
-<div class="card">
+<div class="skill">
 <h3>Autonomous UAV Systems</h3>
 PX4 • ArduPilot • Pixhawk • Mission Planning
 </div>
 
-<div class="card">
+<div class="skill">
 <h3>Flight Test Engineering</h3>
 System validation • autonomous mission testing
 </div>
 
-<div class="card">
+<div class="skill">
 <h3>UAV Diagnostics</h3>
-EKF analysis • vibration diagnostics • telemetry monitoring
+EKF diagnostics • vibration analysis • telemetry monitoring
 </div>
 
-<div class="card">
+<div class="skill">
 <h3>Geospatial Validation</h3>
 QGIS spatial analysis • UAV mapping validation
-</div>
-
-</div>
-
-</div>
-
-<!-- PROJECTS -->
-
-<div id="projects" class="section">
-
-<h2>Engineering Work</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Drone Flight Time Calculator</h3>
-Python tool estimating UAV endurance using battery capacity and payload parameters.
-</div>
-
-<div class="card">
-<h3>UAV Flight Diagnostics</h3>
-Flight log analysis to detect system instability and anomalies.
-</div>
-
-<div class="card">
-<h3>UAV Platform Configuration</h3>
-Engineering study on propulsion matching and multirotor platform optimization.
 </div>
 
 </div>
