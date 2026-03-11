@@ -7,11 +7,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Saranya P | UAV Systems Engineer</title>
+<title>Saranya P | UAV Systems Integration & Flight Test Engineer</title>
 
 <style>
 
-/* Disable text selection */
+/* GLOBAL */
 
 body{
 margin:0;
@@ -22,7 +22,7 @@ scroll-behavior:smooth;
 user-select:none;
 }
 
-/* Subtle animated background */
+/* animated background */
 
 body::before{
 content:"";
@@ -33,13 +33,13 @@ width:600px;
 height:600px;
 background:radial-gradient(circle,#00e5ff22,transparent 70%);
 filter:blur(120px);
-animation:movebg 20s infinite alternate ease-in-out;
+animation:bgmove 20s infinite alternate ease-in-out;
 z-index:-1;
 }
 
-@keyframes movebg{
+@keyframes bgmove{
 0%{transform:translate(0,0);}
-100%{transform:translate(250px,180px);}
+100%{transform:translate(250px,200px);}
 }
 
 /* NAVBAR */
@@ -59,7 +59,7 @@ z-index:100;
 .navbar a{
 color:white;
 text-decoration:none;
-margin-left:28px;
+margin-left:25px;
 font-weight:600;
 }
 
@@ -89,7 +89,7 @@ max-width:520px;
 }
 
 .hero h1{
-font-size:52px;
+font-size:50px;
 color:#00E5FF;
 margin-bottom:10px;
 }
@@ -114,7 +114,7 @@ border:4px solid #1e293b;
 box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 margin-top:100px;
@@ -165,8 +165,6 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* SKILL CARDS */
-
 .skill{
 background:#0f172a;
 padding:25px;
@@ -177,6 +175,12 @@ transition:0.3s;
 .skill:hover{
 transform:translateY(-6px);
 box-shadow:0 10px 25px rgba(0,229,255,0.2);
+}
+
+/* CONTACT (allow copy) */
+
+.contact{
+user-select:text;
 }
 
 /* FOOTER */
@@ -221,9 +225,9 @@ color:#94a3b8;
 
 <p>
 Engineer specializing in UAV system integration, flight testing,
-and diagnostics of PX4 and ArduPilot autonomous platforms.
-Focused on system reliability, telemetry analysis,
-and UAV performance validation.
+and diagnostics of PX4 and ArduPilot autonomous platforms,
+with a focus on system reliability, telemetry analysis,
+and performance validation of real-world UAV operations.
 </p>
 
 </div>
@@ -241,16 +245,24 @@ and UAV performance validation.
 <div class="card">
 
 <p>
-Aeronautical engineer with professional experience in UAV system
-integration, flight testing, and autonomous platform validation
-using Pixhawk-based flight control systems.
+I am an Aeronautical Engineer with professional experience in UAV
+system integration, flight testing, and autonomous platform validation.
+My work focuses on understanding UAV behaviour through
+structured flight testing and engineering analysis.
 </p>
 
 <p>
-My work focuses on diagnosing UAV system behaviour through
-flight log diagnostics including EKF health analysis,
-vibration characterisation, GPS validation,
-and telemetry performance monitoring.
+I specialize in analysing UAV performance using flight telemetry
+and log diagnostics including EKF stability monitoring,
+vibration behaviour analysis, GPS reliability validation,
+and system-level diagnostics for Pixhawk-based UAV platforms.
+</p>
+
+<p>
+My engineering approach focuses on improving the reliability,
+stability, and operational performance of autonomous UAV systems
+through data-driven testing, diagnostics, and validation
+of real-world flight behaviour.
 </p>
 
 </div>
@@ -269,8 +281,9 @@ and telemetry performance monitoring.
 <h3>Drone Technical Support Engineer</h3>
 <span>Drone FocusPath</span>
 <p>
-UAV system integration, diagnostics and technical support
-for drone platforms used in agriculture and mapping.
+UAV system integration, diagnostics and operational
+technical support for drone platforms used in
+agriculture and mapping applications.
 </p>
 </div>
 
@@ -279,7 +292,7 @@ for drone platforms used in agriculture and mapping.
 <span>General Aeronautics</span>
 <p>
 Led UAV flight testing activities including
-system validation, stability testing
+system validation, stability testing,
 and flight performance evaluation.
 </p>
 </div>
@@ -288,8 +301,9 @@ and flight performance evaluation.
 <h3>UAV Flight Test Engineer</h3>
 <span>General Aeronautics</span>
 <p>
-Conducted structured flight tests,
-telemetry diagnostics and UAV behaviour analysis.
+Conducted structured flight testing,
+telemetry diagnostics and UAV behaviour analysis
+in real-world operational environments.
 </p>
 </div>
 
@@ -331,14 +345,20 @@ QGIS mapping validation
 
 <!-- CONTACT -->
 
-<div id="contact" class="section">
+<div id="contact" class="section contact">
 
 <h2>Contact</h2>
 
 <div class="card">
 
-Email: [psaranya973@gmail.com](mailto:psaranya973@gmail.com) <br><br>
-GitHub: github.com/saranya-uavengineer
+Email: [psaranya973@gmail.com](mailto:psaranya973@gmail.com)
+
+<br><br>
+
+GitHub: <a href="https://github.com/saranya-uavengineer"
+target="_blank"
+style="color:#00E5FF;text-decoration:none;font-weight:600;">
+github.com/saranya-uavengineer </a>
 
 </div>
 
@@ -352,15 +372,18 @@ GitHub: github.com/saranya-uavengineer
 
 </div>
 
-<!-- Disable right click and copy -->
-
 <script>
+
+/* Disable right click */
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
+/* Disable copying except contact */
+
 document.addEventListener('copy', function(e){
-e.clipboardData.setData('text/plain', '');
+if(!window.getSelection().anchorNode.parentElement.closest('.contact')){
 e.preventDefault();
+}
 });
 
 </script>
