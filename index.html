@@ -11,7 +11,7 @@
 
 <style>
 
-/* GLOBAL */
+/* Disable text selection */
 
 body{
 margin:0;
@@ -19,9 +19,10 @@ font-family:Segoe UI, Arial;
 background:#020617;
 color:white;
 scroll-behavior:smooth;
+user-select:none;
 }
 
-/* Animated background glow */
+/* Subtle animated background */
 
 body::before{
 content:"";
@@ -30,15 +31,15 @@ top:-200px;
 left:-200px;
 width:600px;
 height:600px;
-background:radial-gradient(circle,#00e5ff30,transparent 70%);
+background:radial-gradient(circle,#00e5ff22,transparent 70%);
 filter:blur(120px);
-animation:glowmove 18s infinite alternate ease-in-out;
+animation:movebg 20s infinite alternate ease-in-out;
 z-index:-1;
 }
 
-@keyframes glowmove{
+@keyframes movebg{
 0%{transform:translate(0,0);}
-100%{transform:translate(300px,200px);}
+100%{transform:translate(250px,180px);}
 }
 
 /* NAVBAR */
@@ -109,13 +110,11 @@ width:230px;
 height:230px;
 border-radius:50%;
 object-fit:cover;
-border:3px solid #00E5FF;
-box-shadow:
-0 0 25px rgba(0,229,255,0.6),
-0 0 60px rgba(0,229,255,0.25);
+border:4px solid #1e293b;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
 margin-top:100px;
@@ -224,7 +223,7 @@ color:#94a3b8;
 Engineer specializing in UAV system integration, flight testing,
 and diagnostics of PX4 and ArduPilot autonomous platforms.
 Focused on system reliability, telemetry analysis,
-and UAV performance validation in real-world operations.
+and UAV performance validation.
 </p>
 
 </div>
@@ -242,22 +241,16 @@ and UAV performance validation in real-world operations.
 <div class="card">
 
 <p>
-I am an Aeronautical Engineer with professional experience in
-UAV system integration, flight testing, and autonomous platform
-validation using Pixhawk-based flight control systems.
+Aeronautical engineer with professional experience in UAV system
+integration, flight testing, and autonomous platform validation
+using Pixhawk-based flight control systems.
 </p>
 
 <p>
-My work focuses on investigating UAV system behaviour through
-flight log diagnostics including EKF health analysis, vibration
-characterisation, GPS reliability validation, and telemetry
-performance monitoring.
-</p>
-
-<p>
-I am particularly interested in improving the reliability of
-autonomous UAV platforms through structured testing,
-data-driven diagnostics, and system validation.
+My work focuses on diagnosing UAV system behaviour through
+flight log diagnostics including EKF health analysis,
+vibration characterisation, GPS validation,
+and telemetry performance monitoring.
 </p>
 
 </div>
@@ -276,9 +269,8 @@ data-driven diagnostics, and system validation.
 <h3>Drone Technical Support Engineer</h3>
 <span>Drone FocusPath</span>
 <p>
-Working on UAV system integration, diagnostics and
-technical support for drone platforms used in agriculture
-and aerial mapping applications.
+UAV system integration, diagnostics and technical support
+for drone platforms used in agriculture and mapping.
 </p>
 </div>
 
@@ -286,8 +278,8 @@ and aerial mapping applications.
 <h3>Senior Flight Test Engineer</h3>
 <span>General Aeronautics</span>
 <p>
-Led UAV flight testing activities for autonomous drone
-platforms including system validation, stability testing
+Led UAV flight testing activities including
+system validation, stability testing
 and flight performance evaluation.
 </p>
 </div>
@@ -296,9 +288,8 @@ and flight performance evaluation.
 <h3>UAV Flight Test Engineer</h3>
 <span>General Aeronautics</span>
 <p>
-Conducted structured flight tests, telemetry diagnostics
-and system analysis to validate UAV behaviour in
-real-world operational conditions.
+Conducted structured flight tests,
+telemetry diagnostics and UAV behaviour analysis.
 </p>
 </div>
 
@@ -316,22 +307,22 @@ real-world operational conditions.
 
 <div class="skill">
 <h3>Autonomous UAV Systems</h3>
-PX4 • ArduPilot • Pixhawk • Mission Planning
+PX4 • ArduPilot • Pixhawk
 </div>
 
 <div class="skill">
 <h3>Flight Test Engineering</h3>
-System validation • autonomous mission testing
+System validation • mission testing
 </div>
 
 <div class="skill">
 <h3>UAV Diagnostics</h3>
-EKF diagnostics • vibration analysis • telemetry monitoring
+EKF diagnostics • vibration analysis
 </div>
 
 <div class="skill">
-<h3>Geospatial Validation</h3>
-QGIS spatial analysis • UAV mapping validation
+<h3>Geospatial Analysis</h3>
+QGIS mapping validation
 </div>
 
 </div>
@@ -360,6 +351,19 @@ GitHub: github.com/saranya-uavengineer
 </div>
 
 </div>
+
+<!-- Disable right click and copy -->
+
+<script>
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.addEventListener('copy', function(e){
+e.clipboardData.setData('text/plain', '');
+e.preventDefault();
+});
+
+</script>
 
 </body>
 
